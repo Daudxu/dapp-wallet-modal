@@ -1,5 +1,3 @@
-import Fortmatic from 'fortmatic';
-
 const ConnectToFortmatic = async (options) => {
   return new Promise((resolve, reject) => {
     (async () => {
