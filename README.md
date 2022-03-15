@@ -1,5 +1,5 @@
 <h1 align="center">
-   ETH Wallet Modal
+   Dapp Wallet Modal
 </h1>
 
 [![npm][npm]][npm-url]  ![NPM](https://img.shields.io/npm/l/Dapp-Wallet-Modal) ![npm](https://img.shields.io/npm/dt/Dapp-Wallet-Modal?color=4D88DB&label=NPM%20Downloads)
