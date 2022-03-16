@@ -35,6 +35,7 @@
     "url": "https://github.com/Daudxu/Dapp-Wallet-Modal.git"
   },
   "dependencies": {
+    "@walletconnect/web3-provider": "^1.7.5",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
