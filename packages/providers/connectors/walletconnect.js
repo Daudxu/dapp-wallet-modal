@@ -1,8 +1,7 @@
 import { getChainId } from "../../tools";
-import WalletConnectProvider from "@walletconnect/web3-provider";
 
 const ConnectToWalletConnect = async (
-  opts
+  options
 ) => {
   return await new Promise((resolve, reject) => {
     (async () => {
@@ -13,17 +12,17 @@ const ConnectToWalletConnect = async (
       let chainId = 1;
       let qrcodeModalOptions = undefined;
 
-      if (opts) {
-        bridge = opts.bridge || bridge;
-        qrcode = typeof opts.qrcode !== "undefined" ? opts.qrcode : qrcode;
-        infuraId = opts.infuraId || "";
-        rpc = opts.rpc || undefined;
+      if (options) {
+        bridge = options.bridge || bridge;
+        qrcode = typeof options.qrcode !== "undefined" ? options.qrcode : qrcode;
+        infuraId = options.infuraId || "";
+        rpc = options.rpc || undefined;
         chainId =
-          opts.network && getChainId(opts.network) ? getChainId(opts.network) : 1;
-        qrcodeModalOptions = opts.qrcodeModalOptions || undefined;
+        options.network && getChainId(options.network) ? getChainId(options.network) : 1;
+        qrcodeModalOptions = options.qrcodeModalOptions || undefined;
       }
 
-      const provider = new WalletConnectProvider({
+      const provider = new options.drive.WalletConnectProvider({
         bridge,
         qrcode,
         infuraId,

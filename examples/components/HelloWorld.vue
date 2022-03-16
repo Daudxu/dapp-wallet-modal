@@ -23,6 +23,7 @@
 import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'Dapp-Wallet-Modal';
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
@@ -69,6 +70,7 @@ export default {
               name: "WalletConnect",
             },
             options: {
+              drive: WalletConnectProvider,
               rpc: {
                 1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
                 4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161'
