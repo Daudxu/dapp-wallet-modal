@@ -18,11 +18,11 @@
 </template>
 
  <script>
-// import '../../lib/Dapp-Wallet-Modal.css'
-// import Base from '../../lib/Dapp-Wallet-Modal.umd.min.js'
+// import '../../lib/dapp-wallet-modal.css'
+// import Base from '../../lib/dapp-wallet-modal.umd.min.js'
 import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
-// import Base from 'Dapp-Wallet-Modal';
+// import Base from 'dapp-wallet-modal';
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";

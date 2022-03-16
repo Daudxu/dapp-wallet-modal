@@ -2,7 +2,7 @@
    Dapp Wallet Modal
 </h1>
 
-[![npm][npm]][npm-url]  ![NPM](https://img.shields.io/npm/l/Dapp-Wallet-Modal) ![npm](https://img.shields.io/npm/dt/Dapp-Wallet-Modal?color=4D88DB&label=NPM%20Downloads)
+[![npm][npm]][npm-url]  ![NPM](https://img.shields.io/npm/l/dapp-wallet-modal) ![npm](https://img.shields.io/npm/dt/dapp-wallet-modal?color=4D88DB&label=NPM%20Downloads)
 
 
 <h2 align="center">
@@ -11,13 +11,13 @@ Ethereum provider solution for  Wallets and Dapp
 
 ## Current support
 <p float="left">
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/>
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
-<img src="https://raw.githubusercontent.com/Daudxu/Dapp-Wallet-Modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/coinbase.svg" width="30" height="30" alt="coinbase"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/master/examples/assets/logos/BlockWallet.png" width="30" height="30" alt="coinbase"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/fortmatic.svg" width="30" height="30" alt="blockmallet"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/binancechainwallet.svg" width="30" height="30" alt="binance"/>
+<img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/724fd2238f6b4878dfcdc819da442bfcbb109733/examples/assets/logos/portis.svg" width="30" height="30" alt="portis"/>
 </p>
 
 ## Preview
@@ -25,35 +25,35 @@ Ethereum provider solution for  Wallets and Dapp
 ![preview](./images/preview.png)
 
 ## example
-https://daudxu.github.io/Dapp-Wallet-Modal/
+https://daudxu.github.io/dapp-wallet-modal/
 
 ## Usage
 
-### 1. Install Dapp-Wallet-Modal NPM package
+### 1. Install dapp-wallet-modal NPM package
 
 ```
 
-npm install --save Dapp-Wallet-Modal
+npm install --save dapp-wallet-modal
 
 # OR
 
-yarn add Dapp-Wallet-Modal
+yarn add dapp-wallet-modal
 
 ```
 
 ### 2. Install Provider packages
 
 ```
-import ethWalletModal from 'Dapp-Wallet-Modal';
+import ethWalletModal from 'dapp-wallet-modal';
 
 
 ```
 
-### 3. Then you can add Dapp-Wallet-Modal to your Dapp as follows
+### 3. Then you can add dapp-wallet-modal to your Dapp as follows
 
 ```
 import Web3 from "web3";
-import ethWalletModal from "Dapp-Wallet-Modal";
+import ethWalletModal from "dapp-wallet-modal";
 
 const  providerOptions = {
         logo: LOGO,
@@ -134,9 +134,9 @@ const  providerOptions = {
 
       }
 
-const Dapp-Wallet-Modal = new Dapp-Wallet-Modal(providerOptions);
+const dapp-wallet-modal = new dapp-wallet-modal(providerOptions);
 
-const provider = await Dapp-Wallet-Modal.connect();
+const provider = await dapp-wallet-modal.connect();
 
 const web3 = new Web3(provider);
 
@@ -276,7 +276,7 @@ const CHAINID = 4
 
  <script>
 
-import Base from 'Dapp-Wallet-Modal';
+import Base from 'dapp-wallet-modal';
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 

@@ -1,5 +1,5 @@
 {
-  "name": "Dapp-Wallet-Modal",
+  "name": "dapp-wallet-modal",
   "version": "1.1.5",
   "private": false,
   "scripts": {
@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name Dapp-Wallet-Modal --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib --name dapp-wallet-modal --dest lib packages/index.js",
     "tonpm": "npm run lib && npm version patch && npm publish",
     "addv": "npm version patch",
     "go": "npm publish"
@@ -26,18 +26,23 @@
     "nft",
     "opensea"
   ],
-  "homepage": "https://github.com/Daudxu/Dapp-Wallet-Modal",
+  "homepage": "https://github.com/Daudxu/dapp-wallet-modal",
   "bugs": {
-    "url": "https://github.com/Daudxu/Dapp-Wallet-Modal/issues"
+    "url": "https://github.com/Daudxu/dapp-wallet-modal/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Daudxu/Dapp-Wallet-Modal.git"
+    "url": "https://github.com/Daudxu/dapp-wallet-modal.git"
   },
   "dependencies": {
     "@walletconnect/web3-provider": "^1.7.5",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "@coinbase/wallet-sdk": "^3.0.1",
+    "@metamask/detect-provider": "^1.2.0",
+    "@portis/web3": "^4.0.7",
+    "fortmatic": "^2.2.1",
+    "vue": "^3.0.0",
+    "web3": "^1.7.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
