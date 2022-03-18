@@ -18,11 +18,11 @@ const ConnectToWalletConnect = async (
         infuraId = options.infuraId || "";
         rpc = options.rpc || undefined;
         chainId =
-        options.network && getChainId(options.network) ? getChainId(options.network) : 1;
+          options.network && getChainId(options.network) ? getChainId(options.network) : 1;
         qrcodeModalOptions = options.qrcodeModalOptions || undefined;
       }
 
-      const provider = new options.drive.WalletConnectProvider({
+      const provider = new options.drive({
         bridge,
         qrcode,
         infuraId,

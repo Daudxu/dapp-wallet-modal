@@ -13,7 +13,7 @@ const ConnectToWalletLink = (opts) => {
         rpc = `https://mainnet.infura.io/v3/${infuraId}`;
       }
 
-      const walletLink = new WalletLink({
+      const walletLink = new options.drive({
         appName,
         appLogoUrl,
         darkMode

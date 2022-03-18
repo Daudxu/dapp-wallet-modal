@@ -23,7 +23,7 @@
 import Base from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'dapp-wallet-modal';
-import WalletConnectProvider from "@walletconnect/web3-provider";
+
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
@@ -39,6 +39,14 @@ import BinancechainwalletLogo from "../assets/logos/binancechainwallet.svg";
 
 import PortisLogo from "../assets/logos/portis.svg";
 
+import WalletConnectProvider from "@walletconnect/web3-provider";
+
+import detectEthereumProvider from '@metamask/detect-provider'
+
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
+
+import Fortmatic from 'fortmatic';
+
 const CHAINID = 4;
 
 export default {
@@ -52,9 +60,9 @@ export default {
       provider: '',
       providerOptions: {
         logo: WalletConnectLogo,
-        maskColor:'rgb(30, 30, 30, 0.8)',
-        bgColor:'#363636',
-        borderColor:'#faba30',
+        maskColor: 'rgb(30, 30, 30, 0.8)',
+        bgColor: '#363636',
+        borderColor: '#faba30',
         chainId: CHAINID,
         walletOptions: {
           metamask: {
@@ -62,7 +70,9 @@ export default {
               logo: MetaMaskLogo,
               name: "MetaMask",
             },
-            options: {}
+            options: {
+              drive: detectEthereumProvider,
+            }
           },
           walletconnect: {
             displayView: {
@@ -85,6 +95,7 @@ export default {
               name: "Coinbase Wallet",
             },
             options: {
+              drive: CoinbaseWalletSDK,
               infuraId: '9aa3d95b3bc440fa88ea12eaa4456161',
               chainId: CHAINID,
               appName: 'Digi',
@@ -105,16 +116,16 @@ export default {
               name: "Fortmatic",
             },
             options: {
+              drive: Fortmatic,
               chainId: CHAINID,
-              key:'pk_test_E652525CA4198573'
+              key: 'pk_test_E652525CA4198573'
             }
           },
           binancechainwallet: {
             displayView: {
               logo: BinancechainwalletLogo,
               name: "Binance Wallet",
-            },
-            options: {}
+            }
           },
           portis: {
             displayView: {
@@ -122,8 +133,8 @@ export default {
               name: "Portis",
             },
             options: {
-                chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
-                id:'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+              chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
+              id: 'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
             }
           }
         },

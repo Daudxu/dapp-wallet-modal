@@ -4,7 +4,7 @@ const ConnectToFortmatic = async (options) => {
       if (options && options.key) {
         try {
           const key = options.key;
-          const fm = new Fortmatic(key, options.chainId);
+          const fm = new options.drive(key, options.chainId);
           const provider = await fm.getProvider();
           provider.fm = fm;
           await fm.user.login();
