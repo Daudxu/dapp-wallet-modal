@@ -13,7 +13,7 @@
 
 #### ⚠️ 知らせ 
 
-統合環境が必要な場合は、にアクセスしてください <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 事業
+統合環境が必要な場合は、にアクセスしてください <a href="https://github.com/Daudxu/eth-wallet-modal">eth-wallet-modal</a> 事業
 
 ## 🚀 現在のサポート 
 <p float="left">

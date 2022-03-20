@@ -13,7 +13,7 @@
 
 #### ⚠️ 注意 
 
-如果你需要集成环境请前往，请访问 <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 项目
+如果你需要集成环境请前往，请访问 <a href="https://github.com/Daudxu/eth-wallet-modal">eth-wallet-modal</a> 项目
 
 ## 🚀 当前支持
 <p float="left">

@@ -13,7 +13,7 @@ English | [简体中文](./README.zh-CN.md) | [日本](./README.ja-JP.md)
 
 #### ⚠️ Notice 
 
-If you need an integrated environment please go to <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> project
+If you need an integrated environment please go to <a href="https://github.com/Daudxu/eth-wallet-modal">eth-wallet-modal</a> project
 
 ## 🚀 Current support 
 <p float="left">
