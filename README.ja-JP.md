@@ -426,20 +426,16 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 ## 📝 Changelog
 
-##### 2022.02.21
-
-> v1.0.0   
- init project
-
 ##### 2022.03.12
-> v1.1.3   
+ >v1.0.0  
+ init project   
  add fortmatic, binance, portis 
  Mask background color customization
  Modal box background color customization
  Modal box border color customization
 
 ##### 2022.03.20
-> v1.1.6   
+> v1.0.2   
 Add fortmatic, binance and Portis wallet support
 
 
