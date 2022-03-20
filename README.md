@@ -53,6 +53,12 @@ yarn add dapp-wallet-modal
 import Web3 from "web3";
 import ethWalletModal from "dapp-wallet-modal";
 
+import detectEthereumProvider from '@metamask/detect-provider';
+
+import WalletConnectProvider from "@walletconnect/web3-provider";
+
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
+
 const  providerOptions = {
         logo: LOGO,
         maskColor:'rgb(30, 30, 30, 0.8)',
@@ -62,17 +68,20 @@ const  providerOptions = {
         walletOptions: {
           metamask: {
             displayView: {
-              logo: MetaMaskLogo,
-              name: "MetaMask",
+              logo: MetaMaskLogo, // your Wallet logo
+              name: "MetaMask", // your Wallet name
             },
-            options: {}
+            options: {
+              drive: detectEthereumProvider,  //  drive package
+            }
           },
           walletconnect: {
             displayView: {
-              logo: WalletConnectLogo,
-              name: "WalletConnect",
+              logo: WalletConnectLogo,  // your Wallet logo
+              name: "WalletConnect", // your Wallet name
             },
             options: {
+              drive: WalletConnectProvider,  //  drive package
               rpc: {
                 1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
                 4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
@@ -83,10 +92,11 @@ const  providerOptions = {
           },
           coinbase: {
             displayView: {
-              logo: CoinbaseLogo,
-              name: "Coinbase Wallet",
+              logo: CoinbaseLogo,  // your Wallet logo
+              name: "Coinbase Wallet",  // your Wallet name
             },
             options: {
+              drive: CoinbaseWalletSDK, //  drive package
               infuraId: '9aa3d95b3bxxxc440fa88ea12eaa4456161',
               chainId: CHAINID,
               appName: 'Digi',
@@ -154,6 +164,9 @@ Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Vi
               logo: 'https://raw.org/metamask.svg' // The logo address you define to display your wallet.  
               name: 'metamask'  //  The name displayed on the front of your own wallet.
             },
+            options: {
+               drive: your drive package or sdk ,
+            }
           }
 ```
 
@@ -168,6 +181,7 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Vie
             name: "WalletConnect",   //  The name displayed on the front of your own wallet.
           },
           options: {
+            drive: your drive package or sdk ,
             rpc: {
               1: 'Your infra 1 chain address',
               4: 'Your infra 4(test Network) chain address'
@@ -191,6 +205,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
             name: "Coinbase Wallet",  //  The name displayed on the front of your own wallet.
             },
             options: {
+              drive: your drive package or sdk ,
               infuraId: 'your infuraId ID',
               chainId: Blockchain network ID,
               appName: 'Your app name',
@@ -207,7 +222,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
 Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> View Doc </a>  
 
 ```
-         coinbase: {
+         blockmallet: {
             displayView: {
             logo: 'https://raw.org/blockmallet.svg' // The logo address you define to display your wallet.   
             name: "blockmallet",  //  The name displayed on the front of your own wallet.
@@ -226,6 +241,7 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
             name: "fortmatic",  //  The name displayed on the front of your own wallet.
             },
             options: {
+              drive: your drive package or sdk ,
               chainId: Blockchain network ID,
               key:'your fortmatic key'
             }
@@ -259,6 +275,7 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
             name: "portis",  //  The name displayed on the front of your own wallet.
             },
             options: {
+                drive: your drive package or sdk ,
                 chainName: 'rinkeby', //  chain Name if
                 id:'your protis key' 
             }
@@ -305,6 +322,7 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
             name: "burnerconnect",   //  The name displayed on the front of your own wallet.
             },
             options: {
+              drive: your drive package or sdk ,
               defaultNetwork: default Blockchain network ID,
               chainId: Blockchain network ID
             }
@@ -322,7 +340,10 @@ Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=
             displayView: {
             logo: 'https://raw.org/torus.svg'  // The logo address you define to display your wallet.  
             name: "torus Wallet",  //  The name displayed on the front of your own wallet.
-            }
+            },
+          options: {
+              drive: your drive package or sdk 
+          }
           },
        
 ```
@@ -338,6 +359,7 @@ Official Doc: <a href=" https://docs.authereum.com/integration" target="view_win
             name: "authereum",  // The name displayed on the front of your own wallet.
             },
             options: {
+              drive: your drive package or sdk ,
                chainName: 'rinkeby',  // Need to pass in the chain Name eg： kova, rinkeby, mainne
             }
           },
@@ -401,20 +423,16 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 
 ## 📝 Changelog
 
-##### 2022.02.21
-
-> v1.0.0   
- init project
-
 ##### 2022.03.12
-> v1.1.3   
+ >v1.0.0  
+ init project   
  add fortmatic, binance, portis 
  Mask background color customization
  Modal box background color customization
  Modal box border color customization
 
 ##### 2022.03.20
-> v1.1.6   
+> v1.0.2   
 Add fortmatic, binance and Portis wallet support
 
 

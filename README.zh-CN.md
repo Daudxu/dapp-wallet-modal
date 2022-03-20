@@ -51,7 +51,14 @@ yarn add dapp-wallet-modal
 
 ```
 import Web3 from "web3";
+
 import ethWalletModal from "dapp-wallet-modal";
+
+import detectEthereumProvider from '@metamask/detect-provider';
+
+import WalletConnectProvider from "@walletconnect/web3-provider";
+
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 
 const  providerOptions = {
         logo: LOGO,
@@ -62,20 +69,23 @@ const  providerOptions = {
         walletOptions: {
           metamask: {
             displayView: {
-              logo: MetaMaskLogo,
-              name: "MetaMask",
+              logo: MetaMaskLogo, // your Wallet logo
+              name: "MetaMask", // your Wallet name
             },
-            options: {}
+            options: {
+              drive: detectEthereumProvider,  //  drive package
+            }
           },
           walletconnect: {
             displayView: {
-              logo: WalletConnectLogo,
-              name: "WalletConnect",
+              logo: WalletConnectLogo,  // your Wallet logo
+              name: "WalletConnect", // your Wallet name
             },
             options: {
+              drive: WalletConnectProvider,  //  drive package
               rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d9a5b3bcs440fa88ea12eaa414516161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d9a5b3bdc440fa88ea12ea221a4456161'
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
               },
               chainId: CHAINID,
               bridge: 'https://bridge.walletconnect.org'
@@ -83,13 +93,14 @@ const  providerOptions = {
           },
           coinbase: {
             displayView: {
-              logo: CoinbaseLogo,
-              name: "Coinbase Wallet",
+              logo: CoinbaseLogo,  // your Wallet logo
+              name: "Coinbase Wallet",  // your Wallet name
             },
             options: {
-              infuraId: '9aa3d95b3bxxaaxc440fasss88ea12eaa4456161',
+              drive: CoinbaseWalletSDK, //  drive package
+              infuraId: '9aa3d95b3bxxxc440fa88ea12eaa4456161',
               chainId: CHAINID,
-              appName: 'Test',
+              appName: 'Digi',
               appLogoUrl: WalletConnectLogo,
               darkMode: false
             }
@@ -98,6 +109,7 @@ const  providerOptions = {
         }
 
       }
+
 
 const walletModal = new ethWalletModal(providerOptions);
 
@@ -154,6 +166,9 @@ Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Vi
               logo: 'https://raw.org/metamask.svg' // 您定义用于显示钱包的徽标地址  
               name: 'metamask'  //  显示在你钱包显示的名字
             },
+            options: {
+               drive: your drive package or sdk
+            }
           }
 ```
 
@@ -168,6 +183,7 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Vie
             name: "WalletConnect",   //  显示在你钱包显示的名字
           },
           options: {
+            drive: your drive package or sdk, 
             rpc: {
               1: 'Your infra 1 chain address',
               4: 'Your infra 4(test Network) chain address'
@@ -191,6 +207,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
             name: "Coinbase Wallet",  //  显示在你钱包显示的名字
             },
             options: {
+              drive: your drive package or sdk, 
               infuraId: 'your infuraId ID',
               chainId: Blockchain network ID,
               appName: 'Your app name',
@@ -207,7 +224,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
 Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/4437032129169-How-to-Integrate-BlockWallet-With-Your-DApp" target="view_window"> View Doc </a>  
 
 ```
-         coinbase: {
+         blockmallet: {
             displayView: {
             logo: 'https://raw.org/blockmallet.svg' // 您定义用于显示钱包的徽标地址   
             name: "blockmallet",  //  显示在你钱包显示的名字
@@ -226,6 +243,7 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
             name: "fortmatic",  //  显示在你钱包显示的名字
             },
             options: {
+              drive: your drive package or sdk,
               chainId: Blockchain network ID,
               key:'your fortmatic key'
             }
@@ -259,6 +277,7 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
             name: "portis",  //  显示在你钱包显示的名字
             },
             options: {
+                drive: your drive package or sdk, 
                 chainName: 'rinkeby', //  chain Name if
                 id:'your protis key' 
             }
@@ -305,6 +324,7 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
             name: "burnerconnect",   //  显示在你钱包显示的名字
             },
             options: {
+              drive: your drive package or sdk,
               defaultNetwork: default Blockchain network ID,
               chainId: Blockchain network ID
             }
@@ -322,6 +342,9 @@ Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=
             displayView: {
             logo: 'https://raw.org/torus.svg'  // 您定义用于显示钱包的徽标地址  
             name: "torus Wallet",  //  显示在你钱包显示的名字
+            },
+            options: {
+               drive: your drive package or sdk
             }
           },
        
@@ -338,6 +361,7 @@ Official Doc: <a href=" https://docs.authereum.com/integration" target="view_win
             name: "authereum",  // 显示在你钱包显示的名字
             },
             options: {
+               drive: your drive package or sdk,
                chainName: 'rinkeby',  // Need to pass in the chain Name eg： kova, rinkeby, mainne
             }
           },
