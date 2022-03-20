@@ -432,7 +432,7 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
  Modal box border color customization
 
 ##### 2022.03.20
-> v1.0.2   
+> v1.0.3    
 Add fortmatic, binance and Portis wallet support
 
 
