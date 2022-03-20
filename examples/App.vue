@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="ETH Wallet Model" />
+  <HelloWorld msg="Dapp Wallet Modal" />
 </template>
 
 <script>

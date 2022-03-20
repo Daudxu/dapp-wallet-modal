@@ -9,7 +9,7 @@ const ConnectToPortis = async (options) => {
           if(typeof(options.config) !== undefined){
              config = options.config;
           }
-          const pt = new Portis(id, chainName, config);
+          const pt = new options.drive(id, chainName, config);
           await pt.provider.enable();
           pt.provider._portis = pt;
           resolve(pt.provider);

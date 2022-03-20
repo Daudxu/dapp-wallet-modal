@@ -53,11 +53,15 @@ import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 
 import Fortmatic from 'fortmatic';
 
+import Portis from '@portis/web3';
+
 import Authereum from 'authereum';
 
 import BurnerConnectProvider from '@burner-wallet/burner-connect-provider';
 
 import Torus from '@toruslabs/torus-embed';
+
+
 
 
 const CHAINID = 4;
@@ -146,6 +150,7 @@ export default {
               name: "Portis",
             },
             options: {
+              drive: Portis,
               chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
               id: 'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
             }
