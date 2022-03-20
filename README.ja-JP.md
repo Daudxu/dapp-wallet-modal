@@ -1,4 +1,4 @@
-[English](./README.md) | 简体中文 | [日本](./README.ja-JP.md) 
+[English](./README.md)  | [简体中文](./README.zh-CN.md) | 日本
 
 <h1 align="center">
  Dapp Wallet Modal
@@ -8,14 +8,14 @@
 
 
 <h3 align="center">
-   一个以太坊提供商Dapp钱包集成解决方案
+  イーサリアムプロバイダーのDappウォレット統合ソリューション
 </h3>
 
-#### ⚠️ 注意 
+#### ⚠️ 知らせ 
 
-如果你需要集成环境请前往，请访问 <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 项目
+統合環境が必要な場合は、にアクセスしてください <a href="https://github.com/Daudxu/dapp-wallet-modal">dapp-wallet-modal</a> 事業
 
-## 🚀 当前支持
+## 🚀 現在のサポート 
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
 <img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
@@ -30,16 +30,16 @@
 </p>
 
 
-## 🎉 演示预览 
+## 🎉 プレビュー 
 
 ![preview](./images/preview.png)
 
-##  💻 演示案例  
+##  💻 例  
 https://daudxu.github.io/dapp-wallet-modal/
 
 ##  🚩 使用方法 
 
-### 1️⃣ 安装 dapp-wallet-modal NPM 软件包
+### 1️⃣ dapp-wallet-modal NPM パッケージをインストールします
 
 ```
 npm install --save dapp-wallet-modal
@@ -47,7 +47,7 @@ npm install --save dapp-wallet-modal
 yarn add dapp-wallet-modal
 ```
 
-### 2️⃣ 然后，您可以将eth钱包模式添加到Dapp中，如下所示
+### 2️⃣ 次に、次のように dapp-wallet-modalを Dapp に追加できます。
 
 ```
 import Web3 from "web3";
@@ -74,8 +74,8 @@ const  providerOptions = {
             },
             options: {
               rpc: {
-                1: 'https://mainnet.infura.io/v3/9aa3d9a5b3bcs440fa88ea12eaa414516161',
-                4: 'https://rinkeby.infura.io/v3/9aa3d9a5b3bdc440fa88ea12ea221a4456161'
+                1: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa414516161',
+                4: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12ea221a4456161'
               },
               chainId: CHAINID,
               bridge: 'https://bridge.walletconnect.org'
@@ -87,9 +87,9 @@ const  providerOptions = {
               name: "Coinbase Wallet",
             },
             options: {
-              infuraId: '9aa3d95b3bxxaaxc440fasss88ea12eaa4456161',
+              infuraId: '9aa3d95b3bxxxc440fa88ea12eaa4456161',
               chainId: CHAINID,
-              appName: 'Test',
+              appName: 'Digi',
               appLogoUrl: WalletConnectLogo,
               darkMode: false
             }
@@ -107,7 +107,7 @@ const web3 = new Web3(provider);
 
 ```
 
-## 📝 参数选项说明
+## 📝 オプション
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -117,7 +117,7 @@ const web3 = new Web3(provider);
 
 
 
-#####  providerOptions 参数说明
+#####  providerOptions パラメータ
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -128,7 +128,7 @@ const web3 = new Web3(provider);
 | chainId         | int      | chain Id              |
 | walletOptions   | array    | See the table below   |
 
-#####  walletOptions 参数说明
+#####  walletOptions パラメータ
 
 | name            | type     | description           |
 | --------------- | -------- | --------------------- |
@@ -151,8 +151,8 @@ Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Vi
 ```
          metamask: {
             displayView: {
-              logo: 'https://raw.org/metamask.svg' // 您定义用于显示钱包的徽标地址  
-              name: 'metamask'  //  显示在你钱包显示的名字
+              logo: 'https://raw.org/metamask.svg' // ウォレットを表示するために定義するロゴアドレス.  
+              name: 'metamask'  //  自分の財布の前面に表示されている名前.
             },
           }
 ```
@@ -164,8 +164,8 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Vie
 ```
         walletconnect: {
           displayView: {
-            logo: 'https://raw.org/walletconnect.svg' // 您定义用于显示钱包的徽标地址  
-            name: "WalletConnect",   //  显示在你钱包显示的名字
+            logo: 'https://raw.org/walletconnect.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "WalletConnect",   //  自分の財布の前面に表示されている名前.
           },
           options: {
             rpc: {
@@ -177,7 +177,7 @@ Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> Vie
           }
         }
 
-// ⚠️ 配置参考官方文档 
+// ⚠️ 構成リファレンスの公式ドキュメント 
 ```
 
 #####  coinbase  
@@ -187,8 +187,8 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/coinbase.svg' // 您定义用于显示钱包的徽标地址  
-            name: "Coinbase Wallet",  //  显示在你钱包显示的名字
+            logo: 'https://raw.org/coinbase.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "Coinbase Wallet",  //  自分の財布の前面に表示されている名前.
             },
             options: {
               infuraId: 'your infuraId ID',
@@ -199,7 +199,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
             }
           }
           
-  // ⚠️ 配置参考官方文档 
+  // ⚠️ 構成リファレンスの公式ドキュメント 
 ```
 
 ##### blockmallet 
@@ -209,8 +209,8 @@ Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/44370321291
 ```
          coinbase: {
             displayView: {
-            logo: 'https://raw.org/blockmallet.svg' // 您定义用于显示钱包的徽标地址   
-            name: "blockmallet",  //  显示在你钱包显示的名字
+            logo: 'https://raw.org/blockmallet.svg' // ウォレットを表示するために定義するロゴアドレス.   
+            name: "blockmallet",  //  自分の財布の前面に表示されている名前.
             },
           }
 ```
@@ -222,8 +222,8 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
 ```
          fortmatic: {
             displayView: {
-            logo: 'https://raw.org/fortmatic.svg' // 您定义用于显示钱包的徽标地址  
-            name: "fortmatic",  //  显示在你钱包显示的名字
+            logo: 'https://raw.org/fortmatic.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "fortmatic",  //  自分の財布の前面に表示されている名前.
             },
             options: {
               chainId: Blockchain network ID,
@@ -231,7 +231,7 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
             }
           }
 
- // ⚠️ 配置参考官方文档      
+ // ⚠️ 構成リファレンスの公式ドキュメント      
 ```
 
 #####  binancechainwallet 
@@ -241,8 +241,8 @@ Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.ht
 ```
          binancechainwallet: {
             displayView: {
-            logo: 'https://raw.org/binancechainwallet.svg' // 您定义用于显示钱包的徽标地址  
-            name: "binancechainwallet",  //  显示在你钱包显示的名字
+            logo: 'https://raw.org/binancechainwallet.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "binancechainwallet",  //  自分の財布の前面に表示されている名前.
             }
           }
 
@@ -255,8 +255,8 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
 ```
          portis: {
             displayView: {
-            logo: 'https://raw.org/portis.svg' // 您定义用于显示钱包的徽标地址  
-            name: "portis",  //  显示在你钱包显示的名字
+            logo: 'https://raw.org/portis.svg' // ウォレットを表示するために定義するロゴアドレス.  
+            name: "portis",  //  自分の財布の前面に表示されている名前.
             },
             options: {
                 chainName: 'rinkeby', //  chain Name if
@@ -264,10 +264,10 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
             }
           }
 
-// ⚠️ 配置参考官方文档     
+// ⚠️ 構成リファレンスの公式ドキュメント     
 ```
- 选项 chainName 列表
-| 网络	| 描述 	|	默认 Gas Relay Hub	|
+ options chainName list
+| Network	| Description 	|	Default Gas Relay Hub	|
 | --------------- | -------- | --------------------- |
 | mainnet |	Ethereum - main network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
 | ropsten	|Ethereum - ropsten network	|0xD216153c06E857cD7f72665E0aF1d7D82172F494 |
@@ -301,8 +301,8 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 ```
          burnerconnect: {
             displayView: {
-            logo: 'https://raw.org/burnerconnect.svg'  // 您定义用于显示钱包的徽标地址  
-            name: "burnerconnect",   //  显示在你钱包显示的名字
+            logo: 'https://raw.org/burnerconnect.svg'  // ウォレットを表示するために定義するロゴアドレス.  
+            name: "burnerconnect",   //  自分の財布の前面に表示されている名前.
             },
             options: {
               defaultNetwork: default Blockchain network ID,
@@ -320,8 +320,8 @@ Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=
 ```
          torus: {
             displayView: {
-            logo: 'https://raw.org/torus.svg'  // 您定义用于显示钱包的徽标地址  
-            name: "torus Wallet",  //  显示在你钱包显示的名字
+            logo: 'https://raw.org/torus.svg'  // ウォレットを表示するために定義するロゴアドレス.  
+            name: "torus Wallet",  //  自分の財布の前面に表示されている名前.
             }
           },
        
@@ -334,18 +334,18 @@ Official Doc: <a href=" https://docs.authereum.com/integration" target="view_win
 ```
          authereum: {
             displayView: {
-            logo: 'https://raw.org/authereum.svg'  // 您定义用于显示钱包的徽标地址   
-            name: "authereum",  // 显示在你钱包显示的名字
+            logo: 'https://raw.org/authereum.svg'  // ウォレットを表示するために定義するロゴアドレス.   
+            name: "authereum",  // 自分の財布の前面に表示されている名前.
             },
             options: {
                chainName: 'rinkeby',  // Need to pass in the chain Name eg： kova, rinkeby, mainne
             }
           },
 
-// ⚠️ 配置参考官方文档     
+// ⚠️ 構成リファレンスの公式ドキュメント     
 ```
- 选项 chainName 列表
-| 网络	| 描述 	|	默认 Gas Relay Hub	|
+ options chainName list
+| Network	| Description 	|	Default Gas Relay Hub	|
 | --------------- | -------- | --------------------- |
 | mainnet |	Ethereum - main network|	0xD216153c06E857cD7f72665E0aF1d7D82172F494|
 | ropsten	|Ethereum - ropsten network	|0xD216153c06E857cD7f72665E0aF1d7D82172F494 |

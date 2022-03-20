@@ -39,13 +39,26 @@ import BinancechainwalletLogo from "../assets/logos/binancechainwallet.svg";
 
 import PortisLogo from "../assets/logos/portis.svg";
 
+import BurnerwalletLogo from "../assets/logos/burnerwallet.png";
+
+import TorusLogo from "../assets/logos/torus.svg";
+
+import AuthereumLogo from "../assets/logos/authereum.svg";
+
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-import detectEthereumProvider from '@metamask/detect-provider'
+import detectEthereumProvider from '@metamask/detect-provider';
 
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
 
 import Fortmatic from 'fortmatic';
+
+import Authereum from 'authereum';
+
+import BurnerConnectProvider from '@burner-wallet/burner-connect-provider';
+
+import Torus from '@toruslabs/torus-embed';
+
 
 const CHAINID = 4;
 
@@ -135,6 +148,36 @@ export default {
             options: {
               chainName: 'rinkeby', //mainnet,ropsten,rinkeby,goerli ...
               id: 'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
+            }
+          },
+           burnerconnect: {
+            displayView: {
+              logo: BurnerwalletLogo,
+              name: "burner connect",
+            },
+            options: {
+              drive: BurnerConnectProvider,
+              defaultNetwork: 4,
+              chainId: 4
+            }
+          },
+          torus: {
+            displayView: {
+              logo: TorusLogo,
+              name: "torus",
+            },
+            options: {
+               drive: Torus
+            }
+          },
+          authereum: {
+            displayView: {
+              logo: AuthereumLogo,
+              name: "authereum",
+            },
+            options: {
+              drive: Authereum,
+              chainName: 'rinkeby', 
             }
           }
         },

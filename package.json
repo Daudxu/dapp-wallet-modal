@@ -1,6 +1,6 @@
 {
   "name": "dapp-wallet-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -35,11 +35,14 @@
     "url": "https://github.com/Daudxu/dapp-wallet-modal.git"
   },
   "dependencies": {
-    "@walletconnect/web3-provider": "^1.7.5",
-    "core-js": "^3.6.5",
+    "@burner-wallet/burner-connect-provider": "^0.1.1",
     "@coinbase/wallet-sdk": "^3.0.1",
     "@metamask/detect-provider": "^1.2.0",
     "@portis/web3": "^4.0.7",
+    "@toruslabs/torus-embed": "^1.21.0",
+    "@walletconnect/web3-provider": "^1.7.1",
+    "authereum": "^0.1.14",
+    "core-js": "^3.6.5",
     "fortmatic": "^2.2.1",
     "vue": "^3.0.0",
     "web3": "^1.7.1"
