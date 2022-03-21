@@ -234,7 +234,7 @@ Official Doc: <a href="https://help.blockwallet.io/hc/en-us/articles/44370321291
 
 #####  fortmatic 
 
-Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View Doc </a>  
+Official Doc: <a href="https://docs.fortmatic.com/" target="view_window"> View Doc </a>  
 
 ```
          fortmatic: {
@@ -254,7 +254,7 @@ Official Doc: <a href=" https://docs.fortmatic.com/" target="view_window"> View 
 
 #####  binancechainwallet 
 
-Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.html" target="view_window"> View Doc </a>  
+Official Doc <a href="https://docs.binance.org/smart-chain/wallet/wallet_api.html" target="view_window"> View Doc </a>  
 
 ```
          binancechainwallet: {
@@ -268,7 +268,7 @@ Official Doc <a href=" https://docs.binance.org/smart-chain/wallet/wallet_api.ht
 
 #####  portis
 
-Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Doc </a>  
+Official Doc: <a href="https://docs.portis.io/#/" target="view_window"> View Doc </a>  
 
 ```
          portis: {
@@ -313,9 +313,9 @@ Official Doc: <a href=" https://docs.portis.io/#/" target="view_window"> View Do
 
 ##### burnerconnect
 
-Official Doc: <a href=" https://medium.com/gitcoin/burner-modules-c6737cf06fe" target="view_window"> View Doc </a>  
+Official Doc: <a href="https://medium.com/gitcoin/burner-modules-c6737cf06fe" target="view_window"> View Doc </a>  
 
-Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provider" target="view_window"> View Doc </a>
+Progect address: <a href="https://github.com/burner-wallet/burner-connect-provider" target="view_window"> View Doc </a>
 
 ```
          burnerconnect: {
@@ -335,7 +335,7 @@ Progect address: <a href=" https://github.com/burner-wallet/burner-connect-provi
 
 ##### torus
 
-Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> View Doc</a>  
+Official Doc: <a href="https://docs.tor.us/integration-builder/?b=wallet&chain=Ethereum&lang=Vue" target="view_window"> View Doc</a>  
 
 ```
          torus: {
@@ -352,7 +352,7 @@ Official Doc: <a href=" https://docs.tor.us/integration-builder/?b=wallet&chain=
 
 ##### authereum
 
-Official Doc: <a href=" https://docs.authereum.com/integration" target="view_window"> View Doc </a>  
+Official Doc: <a href="https://docs.authereum.com/web3-provider" target="view_window"> View Doc </a>  
 
 ```
          authereum: {
