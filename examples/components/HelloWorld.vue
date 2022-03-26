@@ -6,7 +6,7 @@
     </p>
     <div class="ex-main">
       <div class="ex-main-box">
-
+      <button   @click="handleClickTest">Click</button>
         <button v-show="provider === ''"
                 @click="handleClickConnect">Click Connect</button>
         <button v-show="provider"
@@ -21,9 +21,13 @@
 // import '../../lib/dapp-wallet-modal.css'
 // import Base from '../../lib/dapp-wallet-modal.umd.min.js'
 import Base from '../../packages/index'
+import {  CHAIN_DATA_LIST, web3Model } from '../../packages/index'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'dapp-wallet-modal';
 
+import Web3 from 'web3'
+
+import { ethers } from 'ethers'
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
@@ -61,8 +65,7 @@ import BurnerConnectProvider from '@burner-wallet/burner-connect-provider';
 
 import Torus from '@toruslabs/torus-embed';
 
-
-
+// export default aaa(123123123);
 
 const CHAINID = 4;
 
@@ -213,6 +216,13 @@ export default {
       this.baseModel.disconnect(this.provider)
       this.provider = ''
     },
+    handleClickTest(){
+       console.log(CHAIN_DATA_LIST)
+      var a = new web3Model(Web3)
+      var b = new web3Model(ethers)
+      console.log(a.run())
+      console.log(b.run())
+    }
   }
 }
 </script>
