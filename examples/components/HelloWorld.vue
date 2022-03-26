@@ -217,6 +217,7 @@ export default {
       this.provider = ''
     },
     handleClickTest(){
+      // https://rinkeby.etherscan.io/address/0x8d0cd152edce6d3468884ad1ade809ce6a02e53f
        console.log(CHAIN_DATA_LIST)
       var a = new web3Model(Web3)
       var b = new web3Model(ethers)
