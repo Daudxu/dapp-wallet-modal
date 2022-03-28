@@ -6,11 +6,15 @@
     </p>
     <div class="ex-main">
       <div class="ex-main-box">
-        <button @click="handleClickTest">Click</button>
-        <button v-show="provider === ''"
-                @click="handleClickConnect">Click Connect</button>
-        <button v-show="provider"
-                @click="handleClickDisconnect">Click disconnect</button>
+
+        <button class="btn btn-success"
+                v-show="provider === ''"
+                @click="handleClickConnect">Connect</button>
+        <button class="btn btn-green"
+                v-show="provider"
+                @click="handleClickDisconnect">disconnect</button>
+        <button class="btn btn-success btn-outline"
+                @click="handleClickTest">Click</button>
       </div>
     </div>
 
@@ -223,9 +227,9 @@ export default {
       // var b = new web3Model(ethers)
       // console.log(b.run())
       // console.log(Web3.utils.isAddress("0xdDC78e537D177D5e51598B02D04Ac8b5578Ed156"))
-      var web3ModelObj = new web3Model(this.provider, Web3, 4, "0x8D0CD152eDCE6D3468884AD1ade809ce6A02e53f", abi)
+      var web3ModelObj = await new web3Model(this.provider, Web3, 4, "0x8D0CD152eDCE6D3468884AD1ade809ce6A02e53f", abi)
 
-      // console.log(await web3ModelObj.getTotalSupply())
+      console.log(await web3ModelObj.getTotalSupply())
 
       // console.log(await web3ModelObj.getBalanceOf('0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166'))
 
@@ -237,7 +241,7 @@ export default {
 
       // console.log(await web3ModelObj.approve("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", 10))
 
-      console.log(await web3ModelObj.transferFrom("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", "0xdDC78e537D177D5e51598B02D04Ac8b5578Ed156", 5))
+      // console.log(await web3ModelObj.transferFrom("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", "0xdDC78e537D177D5e51598B02D04Ac8b5578Ed156", 5))
 
 
     }
@@ -253,13 +257,15 @@ export default {
   justify-content: center;
 }
 .ex-main .ex-main-box {
+  margin-top: 10px;
   width: 300px;
   display: flex;
   justify-content: center;
 }
 .ex-main .ex-main-box button {
-  height: 30px;
-  background: #42b983;
+  /* height: 30px; */
+  /* background: #42b983; */
+  margin-left: 10px;
 }
 h3 {
   margin: 40px 0 0;
