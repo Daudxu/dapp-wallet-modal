@@ -416,6 +416,12 @@ provider.on("disconnect", (error: { code: number; message: string }) => {
 });
 ```
 
+## 🎾 Plugins
+
+web3Model
+
+
+
 ## 🎾 Features
 
 - [v] Built for Ethereum using [Web3](https://github.com/ethereum/web3.js/).
