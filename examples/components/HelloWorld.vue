@@ -1,24 +1,40 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      Dapp ETH Wallet Modal plugin.
-    </p>
-    <div class="ex-main">
-      <div class="ex-main-box">
-
-        <button class="btn btn-success"
-                v-show="provider === ''"
-                @click="handleClickConnect">Connect</button>
-        <button class="btn btn-green"
-                v-show="provider"
-                @click="handleClickDisconnect">disconnect</button>
-        <button class="btn btn-success btn-outline"
-                @click="handleClickTest">Click</button>
+<div class="hero min-h-screen" style="background-image: url(https://api.lorem.space/image/fashion?w=1000&h=800);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-center text-neutral-content">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Dapp Wallet Modal</h1>
+      <p class="mb-5">Dapp ETH Wallet Modal plugin.</p>
+      <!-- <button class="btn btn-primary">Get Started</button> -->
+      <div v-show="provider === ''">
+        <button class="btn btn-success"  @click="handleClickConnect">Connect</button>
+      </div>
+      <div v-show="provider" >
+        <button class="btn btn-primary"  @click="handleClickDisconnect">disconnect</button>
+        <div class="divider"></div> 
+        <div class="btu"> 
+          <button class="btn btn-active">getBalanceOf</button>
+          <button class="btn btn-active">getTotalSupply</button>
+          <button class="btn btn-active">getAllowance</button>
+          <button class="btn btn-active">mint</button>
+          <button class="btn btn-active">transfer</button>
+          <button class="btn btn-active">transferFrom</button>
+          <button class="btn btn-active">approve</button>
+        </div>
+        <div class="divider"></div> 
+        <div class="btu"> 
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-success">Success</button>
+        </div>
       </div>
     </div>
-
   </div>
+</div>
+
 </template>
 
  <script>
@@ -84,7 +100,7 @@ export default {
       baseModel: '',
       provider: '',
       providerOptions: {
-        logo: WalletConnectLogo,
+        logo: '',
         maskColor: 'rgb(30, 30, 30, 0.8)',
         bgColor: '#363636',
         borderColor: '#faba30',
@@ -249,36 +265,10 @@ export default {
 }
 </script>
 <style scoped>
-.ex-main {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.ex-main .ex-main-box {
-  margin-top: 10px;
-  width: 300px;
-  display: flex;
-  justify-content: center;
-}
-.ex-main .ex-main-box button {
-  /* height: 30px; */
-  /* background: #42b983; */
+
+.btu button {
   margin-left: 10px;
+  margin-bottom: 10px;
 }
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

@@ -26,9 +26,8 @@ export class web3Model {
 
   // ERC20 BASE FUNCTION OPTION
   async getTotalSupply () {
-    console.log(await this.checkCurrentNetwork())
+    // console.log(await this.checkCurrentNetwork())
     if (await this.checkCurrentNetwork()) {
-
       return await this.myContract.methods.totalSupply().call({ from: this.contract })
     }
   }
