@@ -27,8 +27,7 @@ const ConnectToWalletLink = (opts) => {
       }
     })().catch((e) => {
       reject("error:", e)
-    });
-
+    })
   });
 };
 

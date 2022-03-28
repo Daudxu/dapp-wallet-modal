@@ -6,7 +6,7 @@
     </p>
     <div class="ex-main">
       <div class="ex-main-box">
-      <button   @click="handleClickTest">Click</button>
+        <button @click="handleClickTest">Click</button>
         <button v-show="provider === ''"
                 @click="handleClickConnect">Click Connect</button>
         <button v-show="provider"
@@ -21,13 +21,14 @@
 // import '../../lib/dapp-wallet-modal.css'
 // import Base from '../../lib/dapp-wallet-modal.umd.min.js'
 import Base from '../../packages/index'
-import {  CHAIN_DATA_LIST, web3Model } from '../../packages/index'
+import { web3Model } from '../../packages/index'
+import { abi } from './setting'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'dapp-wallet-modal';
 
 import Web3 from 'web3'
 
-import { ethers } from 'ethers'
+// import { ethers } from 'ethers'
 
 import WalletConnectLogo from "../assets/logos/walletconnect-circle.svg";
 
@@ -158,7 +159,7 @@ export default {
               id: 'c668f1f8-ffc6-493e-86a1-b5c41d721ad9'
             }
           },
-           burnerconnect: {
+          burnerconnect: {
             displayView: {
               logo: BurnerwalletLogo,
               name: "burner connect",
@@ -175,7 +176,7 @@ export default {
               name: "torus",
             },
             options: {
-               drive: Torus
+              drive: Torus
             }
           },
           authereum: {
@@ -185,7 +186,7 @@ export default {
             },
             options: {
               drive: Authereum,
-              chainName: 'rinkeby', 
+              chainName: 'rinkeby',
             }
           }
         },
@@ -216,13 +217,29 @@ export default {
       this.baseModel.disconnect(this.provider)
       this.provider = ''
     },
-    handleClickTest(){
+    async handleClickTest () {
       // https://rinkeby.etherscan.io/address/0x8d0cd152edce6d3468884ad1ade809ce6a02e53f
-       console.log(CHAIN_DATA_LIST)
-      var a = new web3Model(Web3)
-      var b = new web3Model(ethers)
-      console.log(a.run())
-      console.log(b.run())
+      //  console.log(CHAIN_DATA_LIST)
+      // var b = new web3Model(ethers)
+      // console.log(b.run())
+      // console.log(Web3.utils.isAddress("0xdDC78e537D177D5e51598B02D04Ac8b5578Ed156"))
+      var web3ModelObj = new web3Model(this.provider, Web3, 4, "0x8D0CD152eDCE6D3468884AD1ade809ce6A02e53f", abi)
+
+      // console.log(await web3ModelObj.getTotalSupply())
+
+      // console.log(await web3ModelObj.getBalanceOf('0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166'))
+
+      // console.log(await web3ModelObj.transfer("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", "0xdDC78e537D177D5e51598B02D04Ac8b5578Ed156", 10))
+
+      // console.log(await web3ModelObj.mint("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", 1))
+
+      // console.log(await web3ModelObj.getAllowance("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", "0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166"))
+
+      // console.log(await web3ModelObj.approve("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", 10))
+
+      console.log(await web3ModelObj.transferFrom("0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166", "0xdDC78e537D177D5e51598B02D04Ac8b5578Ed156", 5))
+
+
     }
   }
 }
