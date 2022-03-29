@@ -13,10 +13,88 @@
                   @click="handleClickConnect">Connect</button>
         </div>
         <div v-show="provider">
+
           <button class="btn btn-primary"
                   @click="handleClickDisconnect">disconnect</button>
-          <div class="divider">ERC20 Contract interaction</div>
+
+          <div class="divider">BASE</div>
           <div class="btu">
+            <!-- The button to open modal -->
+            <label for="my-modal-base-1"
+                   class="btn btn-success">sendTransaction</label>
+
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox"
+                   id="my-modal-base-1"
+                   class="modal-toggle btn btn-success">
+            <div class="modal">
+              <div class="modal-box relative">
+                <label for="my-modal-base-1"
+                       class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 class="text-lg font-bold"
+                    style="color:#000"> sendTransaction</h3>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="baseOwnerAdress"
+                         placeholder="your address"
+                         class="input w-full max-w-xs">
+                </p>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="baseToAdress"
+                         placeholder="to address"
+                         class="input w-full max-w-xs">
+                </p>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="baseCount"
+                         placeholder="count"
+                         class="input w-full max-w-xs">
+                </p>
+                <p class="py-4">
+                  <button class="btn btn-active"
+                          @click="handleClickSendTransaction">sendTransaction</button>
+                </p>
+              </div>
+            </div>
+            <!-- The button to open modal -->
+            <label for="my-modal-base-2"
+                   class="btn btn-success">Sign messages</label>
+
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox"
+                   id="my-modal-base-2"
+                   class="modal-toggle btn btn-success">
+            <div class="modal">
+              <div class="modal-box relative">
+                <label for="my-modal-base-2"
+                       class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 class="text-lg font-bold"
+                    style="color:#000"> Sign messages
+                </h3>
+                <p class="py-8">
+
+                  <textarea class="textarea textarea-primary"
+                            v-model="signText"
+                            placeholder="Bio"></textarea>
+                </p>
+                <p class="py-8">
+                  <button class="btn btn-active"
+                          @click="handleClickSignMessages">Sign messages</button>
+                </p>
+                <p class="py-8">
+                  <textarea class="textarea textarea-primary"
+                            v-model="signature"
+                            placeholder="Bio"></textarea>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider">ERC20 Contract interaction</div>
+
+          <div class="btu">
+
             <!-- The button to open modal -->
             <label for="my-modal-1"
                    class="btn btn-success">get BalanceOf</label>
@@ -227,6 +305,11 @@ export default {
   },
   data () {
     return {
+      baseOwnerAdress: '',
+      baseToAdress: '',
+      baseCount: 1,
+      signText: '',
+      signature: '',
       baseModel: '',
       ownerAdress: '0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166',
       contractAdress: '0x8D0CD152eDCE6D3468884AD1ade809ce6A02e53f',
@@ -404,6 +487,15 @@ export default {
     async handleClickMint () {
       var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
       await web3ModelObj.mint(this.ownerAdress, this.mintCount)
+    },
+    async handleClickSendTransaction () {
+      var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
+      await web3ModelObj.sendTransaction(this.baseOwnerAdress, this.baseToAdress, this.baseCount)
+    },
+    async handleClickSignMessages () {
+      var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
+      var sign = await web3ModelObj.sign(this.signText)
+      this.signature = sign
     }
   }
 }

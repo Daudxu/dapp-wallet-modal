@@ -23,6 +23,23 @@ export class web3Model {
   run () {
     console.log('run')
   }
+  // BASE FUNCTION
+  async sendTransaction (from, to, value) {
+    if (await this.checkCurrentNetwork()) {
+      return await this.web3Obj.eth.sendTransaction({
+        from: from,
+        to: to,
+        value: value
+      })
+    }
+  }
+
+  async sign (messages) {
+    if (await this.checkCurrentNetwork()) {
+      const accounts = await this.web3.eth.getAccounts()
+      return await this.web3.eth.sign(this.web3.utils.sha3(messages), accounts[0])
+    }
+  }
 
   // ERC20 BASE FUNCTION OPTION
   async getTotalSupply () {
