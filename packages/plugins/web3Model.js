@@ -26,14 +26,15 @@ export class web3Model {
 
   // ERC20 BASE FUNCTION OPTION
   async getTotalSupply () {
-    // console.log(await this.checkCurrentNetwork())
     if (await this.checkCurrentNetwork()) {
       return await this.myContract.methods.totalSupply().call({ from: this.contract })
     }
   }
 
   async getBalanceOf (account) {
-    return await this.myContract.methods.balanceOf(account).call({ from: this.contract })
+    if (await this.checkCurrentNetwork()) {
+      return await this.myContract.methods.balanceOf(account).call({ from: this.contract })
+    }
   }
 
   async getAllowance (owner, spender) {

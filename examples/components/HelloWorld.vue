@@ -15,7 +15,7 @@
         <div v-show="provider">
           <button class="btn btn-primary"
                   @click="handleClickDisconnect">disconnect</button>
-          <div class="divider"></div>
+          <div class="divider">ERC20 Contract interaction</div>
           <div class="btu">
             <!-- The button to open modal -->
             <label for="my-modal-1"
@@ -77,14 +77,68 @@
               </div>
             </div>
 
+            <!-- The button to open modal -->
+            <label for="my-modal-3"
+                   class="btn btn-success">Mint</label>
+
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox"
+                   id="my-modal-3"
+                   class="modal-toggle btn btn-success">
+            <div class="modal">
+              <div class="modal-box relative">
+                <label for="my-modal-3"
+                       class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 class="text-lg font-bold"
+                    style="color:#000">Mint </h3>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="ownerAdress"
+                         placeholder="account address"
+                         class="input w-full max-w-xs">
+                </p>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="mintCount"
+                         placeholder="count"
+                         class="input w-full max-w-xs">
+                </p>
+                <p class="py-4">
+                  <button class="btn btn-active"
+                          @click="handleClickMint">Mint</button>
+                </p>
+              </div>
+            </div>
+
             <!-- <button class="btn btn-active">getAllowance</button>
             <button class="btn btn-active">mint</button>
             <button class="btn btn-active">transfer</button>
             <button class="btn btn-active">transferFrom</button>
             <button class="btn btn-active">approve</button> -->
           </div>
-          <div class="divider"></div>
+          <div class="divider">ERC721 Contract interaction</div>
+          <div class="btu">
+            <!-- The button to open modal -->
+            <label for="my-modal-3"
+                   class="btn btn-success">open modal</label>
 
+            <!-- Put this part before </body> tag -->
+            <input type="checkbox"
+                   id="my-modal-3"
+                   class="modal-toggle btn btn-success">
+            <div class="modal">
+              <div class="modal-box relative">
+                <label for="my-modal-3"
+                       class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 class="text-lg font-bold"
+                    style="color:#000"> random Interner user!</h3>
+                <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="divider">ERC1155 Contract interaction</div>
           <div class="btu">
             <!-- The button to open modal -->
             <label for="my-modal-3"
@@ -176,6 +230,7 @@ export default {
       baseModel: '',
       ownerAdress: '0x1537f0d523a264d3bBDf8d4A4e8778cd65b6D166',
       contractAdress: '0x8D0CD152eDCE6D3468884AD1ade809ce6A02e53f',
+      mintCount: 1,
       netId: 4,
       balanceOfCount: 0,
       totalSupplyCount: 0,
@@ -345,6 +400,10 @@ export default {
     async handleClickGetTotalSupply () {
       var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
       this.totalSupplyCount = await web3ModelObj.getTotalSupply()
+    },
+    async handleClickMint () {
+      var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
+      await web3ModelObj.mint(this.ownerAdress, this.mintCount)
     }
   }
 }
