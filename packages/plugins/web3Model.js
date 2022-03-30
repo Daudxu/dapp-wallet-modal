@@ -44,6 +44,19 @@ export class web3Model {
     }
   }
 
+  async personalSign (messages, password) {
+    if (await this.checkCurrentNetwork()) {
+      const accounts = await this.web3.eth.getAccounts()
+      return await this.web3.eth.personal.sign(this.web3.utils.utf8ToHex(messages), accounts[0], password)
+    }
+  }
+
+  async personalAcRecover (messages, signed) {
+    if (await this.checkCurrentNetwork()) {
+      return await this.web3.eth.personal.ecRecover(messages, signed)
+    }
+  }
+
   async signTypedData () {
     if (await this.checkCurrentNetwork()) {
       const accounts = await this.web3.eth.getAccounts()
