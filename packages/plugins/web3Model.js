@@ -1,4 +1,4 @@
-// import Web3 from 'web3'
+// import sigUtil from 'eth-sig-util'
 
 export class web3Model {
   /**
@@ -20,9 +20,11 @@ export class web3Model {
   // static async getInstance () {
   //   return Promise.resolve(new MyStorage())
   // }
+
   run () {
     console.log('run')
   }
+
   // BASE FUNCTION
   async sendTransaction (from, to, value) {
     if (await this.checkCurrentNetwork()) {
@@ -37,9 +39,82 @@ export class web3Model {
   async sign (messages) {
     if (await this.checkCurrentNetwork()) {
       const accounts = await this.web3.eth.getAccounts()
+      console.log(accounts)
       return await this.web3.eth.sign(this.web3.utils.sha3(messages), accounts[0])
     }
   }
+
+  async signTypedData () {
+    if (await this.checkCurrentNetwork()) {
+      const accounts = await this.web3.eth.getAccounts()
+      return await this.signMsg(accounts[0], this.chainId)
+    }
+  }
+
+  async signMsg (account, chainId) {
+    return await new Promise((resolve, reject) => {
+      (async () => {
+        var msgParams = await this.msgParamsData(chainId)
+        var params = [account, msgParams];
+        await this.web3.currentProvider.sendAsync({
+          method: 'eth_signTypedData_v4',
+          params: params,
+          from: account,
+        }, function (err, result) {
+          if (err) return reject(err)
+          if (result.error) {
+            return reject(result.error.message)
+          }
+          resolve(result.result)
+        })
+      })().catch((e) => {
+        reject("error:", e)
+      });
+    });
+
+  }
+
+  async msgParamsData (chainId) {
+    return JSON.stringify({
+      types: {
+        EIP712Domain: [
+          { name: "name", type: "string" },
+          { name: "version", type: "string" },
+          { name: "chainId", type: "uint256" },
+          { name: "verifyingContract", type: "address" },
+        ],
+        Person: [
+          { name: "name", type: "string" },
+          { name: "account", type: "address" },
+        ],
+        Mail: [
+          { name: "from", type: "Person" },
+          { name: "to", type: "Person" },
+          { name: "contents", type: "string" },
+        ],
+      },
+      primaryType: "Mail",
+      domain: {
+        name: "Example Dapp",
+        version: "1.0",
+        chainId: chainId,
+        verifyingContract: "0x0000000000000000000000000000000000000000",
+      },
+      message: {
+        from: {
+          name: "Alice",
+          account: "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        },
+        to: {
+          name: "Bob",
+          account: "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        },
+        contents: "Hey, Bob!",
+      },
+    });
+  }
+
+
 
   // ERC20 BASE FUNCTION OPTION
   async getTotalSupply () {

@@ -1579,6 +1579,14 @@
     "loglevel" "^1.8.0"
     "web3-utils" "^1.7.0"
 
+"@trufflesuite/eth-sig-util@^1.4.2":
+  "integrity" "sha512-+GyfN6b0LNW77hbQlH3ufZ/1eCON7mMrGym6tdYf7xiNw9Vv3jBO72bmmos1EId2NgBvPMhmYYm6DSLQFTmzrA=="
+  "resolved" "https://registry.npmjs.org/@trufflesuite/eth-sig-util/-/eth-sig-util-1.4.2.tgz"
+  "version" "1.4.2"
+  dependencies:
+    "ethereumjs-abi" "^0.6.8"
+    "ethereumjs-util" "^5.1.1"
+
 "@types/bn.js@^4.11.3", "@types/bn.js@^4.11.5":
   "integrity" "sha512-pqr857jrp2kPuO9uRjZ3PwnJTjoQy+fcdxvBTvHm6dkmEL9q+hDD/2j/0ELOBPtPnS8LjCX0gI9nbl8lVkadpg=="
   "resolved" "https://registry.npmmirror.com/@types/bn.js/-/bn.js-4.11.6.tgz"
@@ -5379,7 +5387,7 @@
     "meow" "^5.0.0"
     "secp256k1" "^3.7.1"
 
-"ethereumjs-abi@git+https://github.com/ethereumjs/ethereumjs-abi.git":
+"ethereumjs-abi@^0.6.8", "ethereumjs-abi@git+https://github.com/ethereumjs/ethereumjs-abi.git":
   "version" "0.6.8"
   dependencies:
     "bn.js" "^4.11.8"
