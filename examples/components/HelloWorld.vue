@@ -14,7 +14,7 @@
         </div>
         <div v-show="provider">
 
-          <button class="btn btn-primary"
+          <button class="btn btn-error"
                   @click="handleClickDisconnect">disconnect</button>
 
           <div class="divider">BASE</div>
@@ -189,16 +189,16 @@
           <div class="btu">
 
             <!-- The button to open modal -->
-            <label for="my-modal-1"
+            <label for="my-modal-erc20-1"
                    class="btn btn-success">get BalanceOf</label>
 
             <!-- Put this part before </body> tag -->
             <input type="checkbox"
-                   id="my-modal-1"
+                   id="my-modal-erc20-1"
                    class="modal-toggle btn btn-success">
             <div class="modal">
               <div class="modal-box relative">
-                <label for="my-modal-1"
+                <label for="my-modal-erc20-1"
                        class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 <h3 class="text-lg font-bold"
                     style="color:#000">Get BalanceOf </h3>
@@ -209,7 +209,7 @@
                   <input type="text"
                          v-model="ownerAdress"
                          placeholder="owner address"
-                         class="input w-full max-w-xs">
+                         class="input input-primary">
                 </p>
                 <p class="py-4">
                   <button class="btn btn-active"
@@ -239,7 +239,7 @@
                   <input type="text"
                          v-model="contractAdress"
                          placeholder="contract address"
-                         class="input w-full max-w-xs">
+                         class="input input-primary">
                 </p>
                 <p class="py-4">
                   <button class="btn btn-active"
@@ -266,13 +266,13 @@
                   <input type="text"
                          v-model="ownerAdress"
                          placeholder="account address"
-                         class="input w-full max-w-xs">
+                         class="input input-primary">
                 </p>
                 <p class="py-4">
                   <input type="text"
                          v-model="mintCount"
                          placeholder="count"
-                         class="input w-full max-w-xs">
+                         class="input input-primary">
                 </p>
                 <p class="py-4">
                   <button class="btn btn-active"
@@ -291,7 +291,7 @@
           <div class="btu">
             <!-- The button to open modal -->
             <label for="my-modal-3"
-                   class="btn btn-success">open modal</label>
+                   class="btn btn-success">Mint</label>
 
             <!-- Put this part before </body> tag -->
             <input type="checkbox"
@@ -302,8 +302,23 @@
                 <label for="my-modal-3"
                        class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                 <h3 class="text-lg font-bold"
-                    style="color:#000"> random Interner user!</h3>
-                <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                    style="color:#000">Mint </h3>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="ownerAdress"
+                         placeholder="account address"
+                         class="input input-primary">
+                </p>
+                <p class="py-4">
+                  <input type="text"
+                         v-model="mintCount"
+                         placeholder="count"
+                         class="input input-primary">
+                </p>
+                <p class="py-4">
+                  <button class="btn btn-active"
+                          @click="handleClickMint">Mint</button>
+                </p>
               </div>
             </div>
 

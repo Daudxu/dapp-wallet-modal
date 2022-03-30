@@ -166,6 +166,9 @@ export class web3Model {
 
   // ERC721 BASEF FUNCTION OPTION
 
+  async mintNicMeta () {
+
+  }
 
 
   // ERC1155 BASEF FUNCTION OPTION
