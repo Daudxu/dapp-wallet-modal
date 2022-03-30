@@ -10,9 +10,6 @@ export class ethersModel {
         this.ethersObj = ethersObj;
         this.chainId = chainId;
         this.Abi = Abi;
-
-        //  Check whether the incoming network and the current network are consistent
-        //  If not network, switch the network, if list not network, need add the network,
     }
 
     run(){
