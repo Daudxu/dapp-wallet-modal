@@ -612,7 +612,7 @@ export default {
     },
     async handleClickSignTypedData () {
       var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
-      var sign = await web3ModelObj.signTypedData()
+      var sign = await web3ModelObj.signTypedData(await this.msgParamsData(4))
       console.log('sign', sign)
       this.signTypedDatature = sign
     },
@@ -627,7 +627,46 @@ export default {
       var sign = await web3ModelObj.personalAcRecover(this.signMessage, this.personalsignature)
       console.log('sign', sign)
       this.verifypersonalsignature = sign
-    }
+    },
+     async msgParamsData (chainId) {
+        return JSON.stringify({
+          types: {
+            EIP712Domain: [
+              { name: "name", type: "string" },
+              { name: "version", type: "string" },
+              { name: "chainId", type: "uint256" },
+              { name: "verifyingContract", type: "address" },
+            ],
+            Person: [
+              { name: "name", type: "string" },
+              { name: "account", type: "address" },
+            ],
+            Mail: [
+              { name: "from", type: "Person" },
+              { name: "to", type: "Person" },
+              { name: "contents", type: "string" },
+            ],
+          },
+          primaryType: "Mail",
+          domain: {
+            name: "Example Dapp",
+            version: "1.0",
+            chainId: chainId,
+            verifyingContract: "0x0000000000000000000000000000000000000000",
+          },
+          message: {
+            from: {
+              name: "Alice",
+              account: "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            },
+            to: {
+              name: "Bob",
+              account: "0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            },
+            contents: "Hey, Bob!",
+          },
+        });
+      }
   }
 }
 </script>
