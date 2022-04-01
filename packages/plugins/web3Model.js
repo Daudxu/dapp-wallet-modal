@@ -43,6 +43,13 @@ export class web3Model {
       return await this.web3.eth.sign(this.web3.utils.sha3(messages), accounts[0])
     }
   }
+  async getAccounts () {
+    if (await this.checkCurrentNetwork()) {
+      const accounts = await this.web3.eth.getAccounts()
+      console.log(accounts)
+      return accounts[0]
+    }
+  }
 
   async personalSign (messages, password) {
     if (await this.checkCurrentNetwork()) {

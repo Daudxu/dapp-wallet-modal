@@ -21,7 +21,13 @@
                 <p class="py-4">
                   <input type="text"
                          v-model="ownerAdress"
-                         placeholder="owner address"
+                         placeholder="Owner Address"
+                         class="input input-primary">
+                </p>
+                 <p class="py-4">
+                  <input type="text"
+                         v-model="contractAdress"
+                         placeholder="Contract Address"
                          class="input input-primary">
                 </p>
                 <p class="py-4">
@@ -79,11 +85,17 @@ export default {
     return {
       balanceOfCount: '',
       totalSupplyCount: '',
-      baseToAdress: '',
+      ownerAdress: '',
       baseCount: 1,
       netId: 4,
       contractAdress: "0x8D0CD152eDCE6D3468884AD1ade809ce6A02e53f"
     }
+  },
+ async mounted(){
+     setTimeout( async ()=>{
+        var web3ModelObj = await new web3Model(this.provider, Web3, this.netId, this.contractAdress, abi)
+      this.ownerAdress = await web3ModelObj.getAccounts()
+     },3000)
   },
   methods: {
     async handleClickGetBalanceOf () {
