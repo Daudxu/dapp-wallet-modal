@@ -44,7 +44,9 @@
 // import '../../lib/dapp-wallet-modal.css'
 // import Base from '../../lib/dapp-wallet-modal.umd.min.js'
 import Base from '../../packages/index'
-import { web3Model } from '../../packages/index'
+// import { web3Model } from '../../packages/index'
+// import { web3Model } from '../../lib/dapp-wallet-modal.umd.min.js'
+import { web3Model } from '../../index.js'
 import { abi } from './setting'
 // import getUrlParameters from 'webpack-build-tools-test';
 // import Base from 'dapp-wallet-modal';
