@@ -9,7 +9,7 @@ export const CHAIN_DATA_LIST = {
     chainId: 2,
     chain: "EXP",
     network: "expanse",
-    networkId: 1
+    networkId: 2
   },
   3: {
     chainId: 3,
