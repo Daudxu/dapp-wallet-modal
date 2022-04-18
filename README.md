@@ -247,7 +247,7 @@ Official Doc: <a href="https://docs.fortmatic.com/" target="view_window"> View D
             }
           }
 
- // ⚠️ Configuration reference official documentation      
+ // ⚠️ Configuration reference official documentation    
 ```
 
 #####  binancechainwallet 
