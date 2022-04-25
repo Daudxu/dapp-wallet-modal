@@ -172,7 +172,7 @@ Official Doc: <a href="https://docs.metamask.io/guide/" target="view_window"> Vi
 
 ##### walletconnect
 
-Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> View Doc </a>  
+Official Doc: <a href="https://docs.walletconnect.com" target="view_window"> View Doc </a>   
 
 ```
         walletconnect: {
