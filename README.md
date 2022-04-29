@@ -46,7 +46,7 @@ npm install --save dapp-wallet-modal
 # OR
 yarn add dapp-wallet-modal
 ```
-
+ 
 ### 2️⃣ Then you can add dapp-wallet-modal to your Dapp as follows
 
 ```
