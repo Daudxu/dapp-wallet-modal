@@ -15,7 +15,7 @@ English | [简体中文](./README.zh-CN.md) | [日本](./README.ja-JP.md)
 
 If you need an integrated environment please go to <a href="https://github.com/Daudxu/eth-wallet-modal">eth-wallet-modal</a> project
 
-## 🚀 Current support 
+## 🚀 Current support  
 <p float="left">
 <img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/master/examples/assets/logos/metamask.svg" width="30" height="30" alt="metamask"/>
 <img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/master/examples/assets/logos/walletconnect.svg" width="30" height="30" alt="walletconnect"/>
