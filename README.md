@@ -215,7 +215,7 @@ Official Doc: <a href="https://docs.cloud.coinbase.com/wallet-sdk/docs/installin
           }
           
   // ⚠️ Configuration reference official documentation 
-```
+``` 
 
 ##### blockmallet 
 
