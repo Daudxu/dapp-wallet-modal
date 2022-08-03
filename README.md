@@ -29,7 +29,6 @@ If you need an integrated environment please go to <a href="https://github.com/D
 <img src="https://raw.githubusercontent.com/Daudxu/dapp-wallet-modal/master/examples/assets/logos/authereum.svg" width="30" height="30" alt="authereum"/>
 </p>
 
-
 ## 🎉 Preview 
 
 ![preview](./images/preview.png)
