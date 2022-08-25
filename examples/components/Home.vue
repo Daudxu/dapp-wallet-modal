@@ -6,7 +6,7 @@
     <div class="hero-content text-center text-neutral-content">
       <div >
         <h1 class="mb-5 text-5xl font-bold">Dapp Wallet Modal</h1>
-        <p class="mb-5">Dapp ETH Wallet Modal plugin.</p>
+        <p class="mb-5">Dapp Wallet Modal plugin.</p>
         <!-- <button class="btn btn-primary">Get Started</button> -->
         <div v-show="provider === ''">
           <button class="btn btn-success"
@@ -17,7 +17,7 @@
           <button class="btn btn-error"
                   @click="handleClickDisconnect">disconnect</button>
 
-          <div class="divider">BASE</div>
+          <!-- <div class="divider">BASE</div>
 
           <base-tpl :provider="provider" > </base-tpl>
           
@@ -31,7 +31,7 @@
 
           <div class="divider">ERC1155 Contract Interaction</div>
 
-          <erc1155-tpl :provider="provider"> </erc1155-tpl>
+          <erc1155-tpl :provider="provider"> </erc1155-tpl> -->
 
         </div>
       </div>
@@ -92,10 +92,10 @@ import BurnerConnectProvider from '@burner-wallet/burner-connect-provider';
 import Torus from '@toruslabs/torus-embed';
 
 // export default aaa(123123123);
-import BaseTpl from './BaseTpl.vue'
-import Erc20Tpl from './Erc20Tpl.vue'
-import Erc721Tpl from './Erc721Tpl.vue'
-import Erc1155Tpl from './Erc1155Tpl.vue'
+// import BaseTpl from './baseTpl.vue'
+// import Erc20Tpl from './Erc20Tpl.vue'
+// import Erc721Tpl from './Erc721Tpl.vue'
+// import Erc1155Tpl from './Erc1155Tpl.vue'
 
 const CHAINID = 4;
 
@@ -104,12 +104,12 @@ export default {
   props: {
     msg: String
   },
-  components: {
-    BaseTpl,
-    Erc20Tpl,
-    Erc721Tpl,
-    Erc1155Tpl
-  },
+  // components: {
+  //   BaseTpl,
+  //   Erc20Tpl,
+  //   Erc721Tpl,
+  //   Erc1155Tpl
+  // },
   data () {
     return {
       baseModel: '',

@@ -155,8 +155,8 @@ export class Base {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
         }
         var _this = this
-        if (localStorage.getItem("injected")) {
-          var name = localStorage.getItem("injected")
+        if (sessionStorage.getItem("injected")) {
+          var name = sessionStorage.getItem("injected")
           _this.connectTo(name).then((res) => {
             resolve(res)
           }).catch((error) => {
@@ -188,11 +188,11 @@ export class Base {
         var connector = _this.getProvider(name).connector;
         connector(_this.walletOptions[name].options).then((res) => {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
-          localStorage.setItem("injected", name)
+          sessionStorage.setItem("injected", name)
           resolve(res)
         }).catch((error) => {
           document.getElementById('ETH_WALLET_MODAL').style.display = "none"
-          localStorage.removeItem('injected')
+          sessionStorage.removeItem('injected')
           reject(error)
         })
       })().catch(error => reject(error));
@@ -201,13 +201,13 @@ export class Base {
 
   disconnect = async (provider) => {
     if (provider) {
-      if (localStorage.getItem("injected") === "walletconnect") {
+      if (sessionStorage.getItem("injected") === "walletconnect") {
         provider.connector.killSession()
-        localStorage.removeItem('walletconnect')
-        localStorage.removeItem('loglevel:webpack-dev-server')
+        sessionStorage.removeItem('walletconnect')
+        sessionStorage.removeItem('loglevel:webpack-dev-server')
       }
     }
-    localStorage.removeItem('injected')
+    sessionStorage.removeItem('injected')
   }
 
 
